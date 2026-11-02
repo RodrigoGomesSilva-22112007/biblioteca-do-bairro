@@ -1,0 +1,22 @@
+.catalogo {
+display: grid; gap: 1.5rem;
+grid-template-columns: repeat(3, 1fr);
+}
+
+.destaque { grid-column: span 2; }
+
+body { display: grid; grid-template-columns:1fr 200px;
+grid-template-areas: "topo topo" "menu menu"
+"conteudo lateral" "rodape rodape"; }
+
+header { grid-area: topo; } 
+
+nav { grid-area: menu; }
+
+main { grid-area: conteudo; } 
+
+aside { grid-area: lateral; }
+
+footer { grid-area: rodape; }
+
+.livro{border: 2px solid black;}

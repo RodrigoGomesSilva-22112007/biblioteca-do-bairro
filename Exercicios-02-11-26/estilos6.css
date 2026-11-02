@@ -1,0 +1,27 @@
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cabecalho nav {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cartoes {
+    display: flex;
+    gap: 1rem;
+}
+
+.cartao {
+    flex: 1;
+}
+
+.rodape {
+    display: flex;
+    justify-content: space-between;
+}
