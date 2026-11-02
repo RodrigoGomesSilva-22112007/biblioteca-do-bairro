@@ -1,0 +1,9 @@
+h2,h3{color: green;}
+
+.destaque{font-weight: bold;}
+
+nav a{text-decoration: none;}
+
+nav a:hover{color: purple;}
+
+li:first-child{font-weight: bold;}

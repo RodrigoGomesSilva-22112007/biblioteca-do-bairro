@@ -1,0 +1,16 @@
+header{background-color: red;
+color: aquamarine;}
+
+.faixa {
+background: linear-gradient(
+90deg, #E07A5F, #5d3c08);
+width: 100%;
+
+}
+
+
+.cartao {border-radius: 12px;
+
+}
+
+
