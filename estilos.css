@@ -1,0 +1,422 @@
+/* =========================
+   01. Variáveis e base
+========================= */
+
+:root {
+    --cor-principal: #355c7d;
+    --cor-secundaria: #f8b195;
+    --cor-destaque: #f67280;
+    --cor-fundo: #f7f3ee;
+    --cor-texto: #222222;
+    --cor-branco: #ffffff;
+    --cor-cinza: #dddddd;
+
+    --sombra-suave: 0 4px 12px rgba(0, 0, 0, 0.12);
+    --raio: 12px;
+    --largura-maxima: 1100px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    width: min(90%, var(--largura-maxima));
+    margin: 0 auto;
+}
+
+.seccao {
+    padding: 3rem 0;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    color: var(--cor-principal);
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   02. Cabeçalho e menu
+========================= */
+
+.cabecalho {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    padding: 1rem 0;
+}
+
+.cabecalho-conteudo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cabecalho h1 {
+    margin: 0;
+    font-size: 1.6rem;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.menu a {
+    text-decoration: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: var(--raio);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.menu a:hover,
+.menu a:focus {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto);
+    outline: 3px solid transparent;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   03. Botões e estados
+========================= */
+
+.botao {
+    display: inline-block;
+    border: none;
+    background-color: var(--cor-destaque);
+    color: var(--cor-branco);
+    text-decoration: none;
+    padding: 0.8rem 1.1rem;
+    border-radius: var(--raio);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.botao:hover,
+.botao:focus {
+    background-color: var(--cor-principal);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-suave);
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 3px;
+}
+
+.botao.pequeno {
+    padding: 0.55rem 0.8rem;
+    font-size: 0.9rem;
+}
+
+
+/* =========================
+   04. Página inicial
+========================= */
+
+.destaque {
+    background:
+        linear-gradient(rgba(53, 92, 125, 0.8), rgba(53, 92, 125, 0.8)),
+        url("../img/livro1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-branco);
+    padding: 5rem 0;
+}
+
+.destaque-conteudo {
+    display: grid;
+    grid-template-columns: minmax(0, 650px);
+}
+
+.destaque h2 {
+    color: var(--cor-branco);
+    font-size: clamp(2rem, 5vw, 4rem);
+    margin-top: 0;
+}
+
+.destaque p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.cartao {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-suave);
+    border-top: 5px solid var(--cor-destaque);
+}
+
+
+/* =========================
+   05. Catálogo
+========================= */
+
+.grelha-livros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.livro {
+    background-color: var(--cor-branco);
+    padding: 1rem;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-suave);
+    border: 1px solid var(--cor-cinza);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.livro img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: calc(var(--raio) - 4px);
+}
+
+.livro h3 {
+    margin-bottom: 0;
+}
+
+.livro p {
+    margin-top: 0;
+}
+
+.destaque-livro {
+    border: 3px solid var(--cor-destaque);
+    transform: scale(1.02);
+}
+
+
+/* =========================
+   06. Eventos
+========================= */
+
+.tabela-wrapper {
+    overflow-x: auto;
+    background-color: var(--cor-branco);
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-suave);
+}
+
+.tabela-eventos {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+}
+
+.tabela-eventos th,
+.tabela-eventos td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-cinza);
+}
+
+.tabela-eventos th {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+}
+
+.tabela-eventos tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.tabela-eventos tbody tr:hover {
+    background-color: #ffe4dd;
+}
+
+
+/* =========================
+   07. Sobre
+========================= */
+
+.sobre-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.caixa-info {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-suave);
+    border-left: 6px solid var(--cor-secundaria);
+}
+
+.equipa {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.membro {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: var(--raio);
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+}
+
+.membro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 5px solid var(--cor-secundaria);
+}
+
+
+/* =========================
+   08. Contactos
+========================= */
+
+.contactos-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.formulario {
+    background-color: var(--cor-branco);
+    padding: 1.5rem;
+    border-radius: var(--raio);
+    box-shadow: var(--sombra-suave);
+}
+
+.campo {
+    margin-bottom: 1rem;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--cor-cinza);
+    border-radius: var(--raio);
+    font: inherit;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--cor-destaque);
+    outline: 3px solid var(--cor-secundaria);
+    outline-offset: 2px;
+}
+
+
+/* =========================
+   09. Rodapé
+========================= */
+
+.rodape {
+    background-color: var(--cor-principal);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+}
+
+
+/* =========================
+   10. Responsividade
+========================= */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .cabecalho-conteudo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cartoes,
+    .grelha-livros,
+    .equipa {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .sobre-grid,
+    .contactos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Telemóveis */
+@media (max-width: 600px) {
+    .cabecalho-conteudo {
+        align-items: center;
+        text-align: center;
+    }
+
+    .menu {
+        justify-content: center;
+    }
+
+    .menu a {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .destaque {
+        padding: 3rem 0;
+        text-align: center;
+    }
+
+    .cartoes,
+    .grelha-livros,
+    .equipa {
+        grid-template-columns: 1fr;
+    }
+
+    .destaque-livro {
+        transform: none;
+    }
+}
