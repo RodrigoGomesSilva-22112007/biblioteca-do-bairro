@@ -1,0 +1,76 @@
+:root {
+    --cor-principal: #23395B;
+    --cor-destaque: #A84B33;
+    --cor-fundo: #FFF8F0;
+    --cor-texto: #222222;
+    --cor-clara: #ffffff;
+    --cor-sombra: rgb(0 0 0 / 0.1);
+    --raio: 12px;
+}
+
+/* Segundo tema basta pôr class="tema-escuro" no body */
+.tema-escuro {
+    --cor-principal: #111827;
+    --cor-destaque: #F97316;
+    --cor-fundo: #1F2937;
+    --cor-texto: #F9FAFB;
+    --cor-clara: #374151;
+    --cor-sombra: rgb(0 0 0 / 0.3);
+}
+
+body {
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+header,
+footer {
+    background: var(--cor-principal);
+    color: var(--cor-clara);
+}
+
+a {
+    color: var(--cor-principal);
+}
+
+header a,
+footer a {
+    color: var(--cor-clara);
+}
+
+a:hover {
+    color: var(--cor-destaque);
+}
+
+a:focus-visible,
+.botao:focus-visible {
+    outline: 3px solid var(--cor-principal);
+    outline-offset: 3px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    background: var(--cor-destaque);
+    color: var(--cor-clara);
+    border-radius: var(--raio);
+    text-decoration: none;
+}
+
+.botao:hover {
+    background: var(--cor-principal);
+    color: var(--cor-clara);
+}
+
+.cartao,
+.livro {
+    background: var(--cor-clara);
+    border-radius: var(--raio);
+    box-shadow: 0 4px 12px var(--cor-sombra);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.cartao:hover,
+.livro:hover {
+    transform: translateY(-4px);
+}
