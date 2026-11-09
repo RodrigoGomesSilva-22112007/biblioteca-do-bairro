@@ -1,0 +1,19 @@
+body {
+font-family: Times, Times New Roman, serif;
+font-size: 1.125rem;
+line-height: 1.6;
+background-color: #645c5a;
+}
+
+text{color: #140400;}
+
+h1, h2, h3 { font-family: "Sofia", sans-serif;; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1rem; }
+
+.etiqueta {
+text-transform: uppercase;
+letter-spacing: 4px;
+color: #29989a;
+}

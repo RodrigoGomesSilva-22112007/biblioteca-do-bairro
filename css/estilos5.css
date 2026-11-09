@@ -1,0 +1,25 @@
+header {
+    background: #a2b6d4;
+    color: #FFF8F0;
+}
+
+.aviso {
+    background: linear-gradient(90deg, #E07A5F, #7fc1a7);
+}
+
+.cartao {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.botao {
+    padding: 0.6rem 1.4rem;
+    background: #461104;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.equipa img {
+    border-radius: 50%;
+}
